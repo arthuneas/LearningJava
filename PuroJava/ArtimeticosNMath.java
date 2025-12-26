@@ -41,7 +41,8 @@ public class ArtimeticosNMath {
         System.out.println("numero = " + --numero2);
         System.out.println("valor = " + valor1);
         System.out.println("numero = " + numero3);
-        System.out.println("numero = " + numero4);
+        System.out.println("numero = " + numero4); 
+        System.out.println("numero = " + numero5);
 
 
         System.out.println("============================");
