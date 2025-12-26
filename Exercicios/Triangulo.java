@@ -17,6 +17,7 @@ public class Triangulo {
 
         System.out.println(ehTriangulo);
 
+        input.close();
 
     }
 }

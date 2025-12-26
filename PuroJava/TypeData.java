@@ -24,6 +24,8 @@ public class TypeData {
 
         //formas de declarar variavel
 
+        /* 
+
         //inteiro
         int idade = 3; //inteiro idade
         int age = (int) 3; //typecast
@@ -44,6 +46,7 @@ public class TypeData {
         boolean estudante = true;
         Boolean estudante2 = true;
         //Boolean estudante2 = Boolean.valueOf(true)
+        */
 
 // --------------------------------------------------------
 
@@ -84,6 +87,7 @@ public class TypeData {
         float num = Float.parseFloat(number3);
         System.out.println(num);
 
+        ler.close();
 
     }
 }

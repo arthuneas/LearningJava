@@ -14,5 +14,7 @@ public class Sorteio {
 
         System.out.println("o valor do bilhete ser par é: " + ehPar);
 
+        sc.close();
+
     }
 }

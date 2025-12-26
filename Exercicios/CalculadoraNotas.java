@@ -28,5 +28,7 @@ public class CalculadoraNotas {
 
         System.out.printf("a nota final é: %.2f", media);
 
+        sc.close();
+
     }
 }

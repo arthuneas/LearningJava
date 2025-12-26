@@ -41,5 +41,7 @@ public class Condicionais1 {
             System.out.println("eh impar");
         }
 
+        input.close();
+
     }
 }

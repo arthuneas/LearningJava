@@ -33,5 +33,7 @@ public class Sabe {
             System.out.println("Q4");
 
         }
+
+        input.close();
     }
 }

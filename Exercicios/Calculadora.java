@@ -18,6 +18,7 @@ public class Calculadora {
         System.out.println(Math.cos(numero));
         System.out.println(Math.tan(numero));
 
+        sc.close();
 
     }
 }

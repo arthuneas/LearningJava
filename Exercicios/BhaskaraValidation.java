@@ -20,5 +20,7 @@ public class BhaskaraValidation {
 
         System.out.println(isValid);
 
+        input.close();
+
     }
 }

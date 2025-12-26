@@ -16,7 +16,7 @@ public class Padaria {
 
         System.out.printf("o total a pagar é %.2f", total);
 
-
+        ler.close();
 
     }
 }

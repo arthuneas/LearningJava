@@ -15,5 +15,7 @@ public class Heron {
         double area = Math.sqrt(sp * (sp - a) * (sp - b) * (sp - c));
 
         System.out.printf("Area = %.4f", area);
+
+        sc.close();
     }
 }
