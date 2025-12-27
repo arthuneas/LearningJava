@@ -3,6 +3,7 @@ package Exercicios;
 import java.util.Scanner;
 
 public class TriangleType {
+    @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
 
         double a, b, c;
@@ -10,13 +11,13 @@ public class TriangleType {
         double temp;
         boolean retangulo, obtusangulo, equilatero, isoceles, isNotTriangule;
 
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {;
 
-        a = sc.nextDouble();
-        b = sc.nextDouble();
-        c = sc.nextDouble();
+            a = sc.nextDouble();
+            b = sc.nextDouble();
+            c = sc.nextDouble();
 
-        sc.close();
+        }
 
         //bubble sort de 3 variaveis, nao pode usar array no exercicio
         if (a < b) {
@@ -75,6 +76,9 @@ public class TriangleType {
             } else if (isoceles) {
                 System.out.println("TRIANGULO ISOSCELES");
                 
+            } else {
+                System.out.println("TRIANGULO ESCALNENO");
+
             }
         
         }

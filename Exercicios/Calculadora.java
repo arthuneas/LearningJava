@@ -6,6 +6,8 @@ public class Calculadora {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        sc.close();
+
         System.out.printf("Digite um numero para fazer os calculos: ");
         float numero = sc.nextFloat();
 
@@ -18,7 +20,7 @@ public class Calculadora {
         System.out.println(Math.cos(numero));
         System.out.println(Math.tan(numero));
 
-        sc.close();
+
 
     }
 }

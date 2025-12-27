@@ -2,30 +2,53 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Condicionais2 {
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
-        
-        int nasc, idade, ano;
 
         Scanner sc = new Scanner(System.in);
         LocalDate dataAtual = LocalDate.now();
 
-        ano = dataAtual.getYear();
-        nasc = sc.nextInt();
+        int ano = dataAtual.getYear();
+        int nasc = sc.nextInt();
 
-        sc.close();
+        int idade = ano - nasc;
 
-        idade = ano - nasc;
-
-        if (idade < 6) {
+        if (idade < 16) {
             System.out.println("NAO VOTA");
         
+        } else if (idade >= 16 && idade < 18 || idade > 70) {
+            System.out.println("VOTO OPCIONAL");    
+
         } else {
-   
-            System.out.println("");    
+            System.out.println("VOTO OBRIGATORIO");
 
         }
 
+        System.out.println("-------------------------------------");
 
+        System.out.print("Quantas pernas: ");
+        int caso = sc.nextInt();
+        sc.close();
+
+        //a variavel é atribuida ao switch
+        //nova sintaxe do switch
+        String tipo = switch (caso) {
+
+            case 1 -> "Saci";
+
+            case 2 -> "Bipede";
+
+            case 3 -> "Tripe";
+            
+            case 4 -> "Quadrupede";
+
+            case 6, 8 -> "Aranha";
+
+            default -> "ET";
+
+        };
+
+        System.out.printf("Isso é um(a) %s ", tipo);
 
     }
 }
