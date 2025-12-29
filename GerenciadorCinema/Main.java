@@ -1,8 +1,29 @@
 package GerenciadorCinema;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+
+    public static void clearScreen() {
+        try {
+
+            String os = System.getProperty("os.name");
+
+            if (os.contains("Windows")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
+            } else {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public static void printMenu(){
         Scanner sc = new Scanner(System.in);
@@ -18,44 +39,61 @@ public class Main {
     }
 
 
-    public static void chooseMenu(int opcao){
+    public static void chooseMenu(int opcao, int[][] sala){
 
         printMenu();
 
+
         switch (opcao) {
-            //case 1 -> Opcao.mostrarSala();
+            case 1:
+                clearScreen();
+                Opcao.mostrarSala(sala);
+                break;
 
-            case 2 -> Opcao.venderIngresso();
+            //case 2 -> Opcao.venderIngresso(sala);
 
-            case 3 -> Opcao.cancelarIngresso();
+            //case 3 -> Opcao.cancelarIngresso(sala);
 
-            case 4 -> Opcao.relatorio();
+            case 4:
+                Opcao.relatorio(sala);
+                clearScreen();
+                break;
 
-            case 5 -> System.exit(0);
+            case 5:
+                System.exit(0);
+                break;
 
-            default -> throw new IllegalStateException("Unexpected value: " + opcao);
+            default:
+                throw new IllegalStateException("Unexpected value: " + opcao);
         }
+
+
     }
 
 
     public static void main(String[] args) {
 
+        //inicializa a matriz com 0
+        int[][] sala = new int[5][10];
+
+        for (int i = 0; i < sala.length; i++){
+            Arrays.fill(sala[i], 0);
+        }
+
         Scanner sc = new Scanner(System.in);
 
-        while (true){
+        int opcao = 0;
+
+        while (opcao != 5){
 
             //printa o menu
             printMenu();
-            int opcao = sc.nextInt();
+            opcao = sc.nextInt();
+            clearScreen();
 
             //logica das opcoes
-            chooseMenu(opcao);
-
+            chooseMenu(opcao, sala);
 
         }
-
-
     }
-
-
 }

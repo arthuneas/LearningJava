@@ -20,14 +20,53 @@ public class Met {
     }
 
 
-    public static int readInt(int fileira, int coluna){
-        System.out.println("Digite um numero:");
+    public static void gerenciamentoFinal(int[][] sala){
+        int totalVinte = 0;
+        int totalQuarenta = 0;
+        int totalIngressos = 0;
+
+        for (int i = 0; i < sala.length; i++) {
+            for (int j = 0; j < sala[0].length; j++) {
+                if (sala[i][j] == 1){
+                    totalIngressos++;
+
+                    if (i <= 2) {
+                        totalVinte++;
+
+                    } else {
+                        totalQuarenta++;
+                    }
+                }
+            }
+        }
+
+        int precoVinte = 20 * totalVinte;
+        int precoQuarenta = 40 * totalQuarenta;
+        int precoTotal = precoVinte + precoQuarenta;
+
+        System.out.println();
+
+        System.out.println("===================== Faturamento ======================");
+        System.out.println("Faturamento dos Ingressos VIP: " + precoQuarenta);
+        System.out.println("Faturamento dos Ingressos Tradicionais: " + precoVinte);
+        System.out.println("Faturamento Total: " + precoTotal);
+        System.out.println();
+
+        System.out.println("------------------------------------------------------------");
+        System.out.println("===================== Quantitativos ======================");
+        System.out.println("Total de Ingressos da Fileira Tradicional: " + totalVinte);
+        System.out.println("Total de Ingressos da Fileira VIP: " + totalQuarenta);
+        System.out.println("Total de Ingressos Vendidos: " + totalIngressos);
+        System.out.println();
+
+    }
+
+    public static int readInt(){
         return sc.nextInt();
     }
 
 
-    public static double readDouble(int fileira, int coluna){
-        System.out.println("Digite um numero:");
+    public static double readDouble(){
         return sc.nextDouble();
     }
 }

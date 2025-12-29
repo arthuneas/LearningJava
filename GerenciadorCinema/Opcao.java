@@ -1,9 +1,12 @@
 package GerenciadorCinema;
 
+import java.util.Arrays;
+
 public class Opcao {
 
     public static void mostrarSala(int[][] sala){
-        System.out.println("\n=== TELA DO CINEMA ===");
+        System.out.println("\n     ======================");
+        System.out.println("     === TELA DO CINEMA ===\n");
 
         System.out.print(" ");
 
@@ -71,11 +74,15 @@ public class Opcao {
     }
 
 
-    public static void relatorio(){
+    public static void relatorio(int[][] sala){
         System.out.println("- - - Relatorio Fincanceiro - - ->");
         System.out.println();
-        System.out.println("");
+        System.out.println("- - - - - - - PRECO INGRESSOS - - - - - - - -");
+        System.out.println("Fileiras [0, 1, 2] - - - - - - R$ 20,00 Reais");
+        System.out.println("Fileiras [3, 4] - - - - - - - -R$ 40,00 Reais");
+        System.out.println();
 
+        Met.gerenciamentoFinal(sala);
 
     }
 
@@ -83,13 +90,14 @@ public class Opcao {
 
     public static void main(String[] args) {
 
-        int[][] sala = {
-                {0, 0, 1, 0, 0},
-                {0, 0, 1, 0, 0},
-                {0, 0, 1, 0, 0},
-                {0, 0, 1, 0, 0},
-                {0, 0, 1, 0, 0}
-        };
+        int[][] sala = new int[5][10];
+
+        //sala.length = 5
+        //preenche a linha
+        for (int i = 0; i < sala.length; i++){
+            Arrays.fill(sala[i], 0);
+        }
+
 
         mostrarSala(sala);
     }
