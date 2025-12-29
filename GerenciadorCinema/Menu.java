@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class Menu {
 
-    public static int[][] matrizSala(){
+    public static int[][] matrizSala() {
         int[][] sala = new int[5][10];
 
-        for (int i = 0; i < sala.length; i++){
-            Arrays.fill(sala[i], 0);
+        for (int[] sala1 : sala) {
+            Arrays.fill(sala1, 0);
         }
 
         return sala;
@@ -31,28 +31,17 @@ public class Menu {
     public static void chooseMenu(int opcao, int[][] sala){
 
         switch (opcao) {
-            case 1:
-                Opcao.mostrarSala(sala);
-                break;
+            case 1 -> Opcao.mostrarSala(sala);
 
-            case 2:
-                Opcao.venderIngresso(sala);
-                break;
+            case 2 -> Opcao.venderIngresso(sala);
 
-            case 3:
-                Opcao.cancelarIngresso(sala);
-                break;
+            case 3 -> Opcao.cancelarIngresso(sala);
 
-            case 4:
-                Opcao.relatorio(sala);
-                break;
+            case 4 -> Opcao.relatorio(sala);
 
-            case 5:
-                System.exit(0);
-                break;
+            case 5 -> System.exit(0);
 
-            default:
-                throw new IllegalStateException("Unexpected value: " + opcao);
+            default -> throw new IllegalStateException("Unexpected value: " + opcao);
         }
 
     }
