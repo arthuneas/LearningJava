@@ -6,7 +6,8 @@ public class Opcao {
 
     public static void mostrarSala(int[][] sala){
         Met.clearScreen();
-        System.out.println("\n     ======================");
+        System.out.println("\n---------------------------------------");
+        System.out.println("     ======================");
         System.out.println("     === TELA DO CINEMA ===\n");
 
         System.out.print(" ");
@@ -32,12 +33,19 @@ public class Opcao {
             System.out.println();
         }
 
+        System.out.println("---------------------------------------");
+        System.out.println();
+
     }
 
 
     public static void venderIngresso(int[][] sala){
         Met.clearScreen();
-        System.out.println("\n\n - - - Vendendo ingresso - - ->\n");
+        System.out.println("\n\n - - - - - - Vendendo ingresso - - - - - - - >\n");
+        System.out.println("- - - - - - - PRECO INGRESSOS - - - - - - - -");
+        System.out.println("Fileiras [0, 1, 2] - - - - - - R$ 20,00 Reais");
+        System.out.println("Fileiras [3, 4] - - - - - - - -R$ 40,00 Reais");
+        System.out.println();
 
         System.out.print("Digite a Fileira da Cadeira Desejada: ");
         int fileira = Met.readInt();
@@ -55,6 +63,7 @@ public class Opcao {
             return;
 
         } else if (sala[fileira][coluna] == 0) {
+
             System.out.printf("A Cadeira [%d][%d] Foi Selecionada!\n", fileira, coluna);
             sala[fileira][coluna] = 1;
 
@@ -94,10 +103,6 @@ public class Opcao {
     public static void relatorio(int[][] sala){
         Met.clearScreen();
         System.out.println("- - - Relatorio Fincanceiro - - ->");
-        System.out.println();
-        System.out.println("- - - - - - - PRECO INGRESSOS - - - - - - - -");
-        System.out.println("Fileiras [0, 1, 2] - - - - - - R$ 20,00 Reais");
-        System.out.println("Fileiras [3, 4] - - - - - - - -R$ 40,00 Reais");
         System.out.println();
 
         Met.gerenciamentoFinal(sala);

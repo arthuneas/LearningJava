@@ -17,7 +17,6 @@ public class Main {
 
 
     public static void printMenu(){
-        Scanner sc = new Scanner(System.in);
 
         System.out.println("=== MENU CINEMA ===");
         System.out.println("1. Mostrar Sala");
@@ -31,9 +30,6 @@ public class Main {
 
 
     public static void chooseMenu(int opcao, int[][] sala){
-
-        printMenu();
-
 
         switch (opcao) {
             case 1:
@@ -71,7 +67,7 @@ public class Main {
 
         int opcao = 0;
 
-        while (opcao != 5){
+        while (true){
 
             //printa o menu
             printMenu();

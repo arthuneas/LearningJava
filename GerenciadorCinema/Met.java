@@ -64,18 +64,19 @@ public class Met {
         int precoQuarenta = 40 * totalQuarenta;
         int precoTotal = precoVinte + precoQuarenta;
 
-        System.out.println();
 
         System.out.println("===================== Faturamento ======================");
         System.out.println("Faturamento dos Ingressos VIP: " + precoQuarenta);
         System.out.println("Faturamento dos Ingressos Tradicionais: " + precoVinte);
+        System.out.println("- - - -");
         System.out.println("Faturamento Total: " + precoTotal);
+
         System.out.println();
 
-        System.out.println("------------------------------------------------------------");
         System.out.println("===================== Quantitativos ======================");
         System.out.println("Total de Ingressos da Fileira Tradicional: " + totalVinte);
         System.out.println("Total de Ingressos da Fileira VIP: " + totalQuarenta);
+        System.out.println("- - - - ");
         System.out.println("Total de Ingressos Vendidos: " + totalIngressos);
         System.out.println();
 
