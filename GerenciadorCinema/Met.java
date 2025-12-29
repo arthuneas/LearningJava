@@ -7,6 +7,26 @@ public class Met {
     static Scanner sc = new Scanner(System.in);
 
 
+    public static void clearScreen() {
+        try {
+
+            String os = System.getProperty("os.name");
+
+            if (os.contains("Windows")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
+            } else {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public static boolean validCondition(int fileira, int coluna){
 
         boolean posicaoValida = ((fileira >= 0) && (fileira < 5)) && ((coluna >= 0) && (coluna < 10));
@@ -61,12 +81,9 @@ public class Met {
 
     }
 
+
     public static int readInt(){
         return sc.nextInt();
     }
 
-
-    public static double readDouble(){
-        return sc.nextDouble();
-    }
 }

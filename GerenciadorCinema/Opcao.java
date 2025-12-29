@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Opcao {
 
     public static void mostrarSala(int[][] sala){
+        Met.clearScreen();
         System.out.println("\n     ======================");
         System.out.println("     === TELA DO CINEMA ===\n");
 
@@ -34,10 +35,19 @@ public class Opcao {
     }
 
 
-    public static void venderIngresso(int[][] sala, int fileira, int coluna){
-        System.out.println(" - - - Vendendo ingresso - - ->");
+    public static void venderIngresso(int[][] sala){
+        Met.clearScreen();
+        System.out.println("\n\n - - - Vendendo ingresso - - ->\n");
 
-        Met.validCondition(fileira, coluna);
+        System.out.print("Digite a Fileira da Cadeira Desejada: ");
+        int fileira = Met.readInt();
+
+        System.out.print("Digite a Coluna da Cadeira Desejada: ");
+        int coluna = Met.readInt();
+
+        if (!Met.validCondition(fileira, coluna)){
+            return;
+        }
 
         if (sala[fileira][coluna] == 1) {
             System.out.println("Essa Cadeira Está Ocupada.");
@@ -53,8 +63,15 @@ public class Opcao {
     }
 
 
-    public static void cancelarIngresso(int[][] sala, int fileira, int coluna){
+    public static void cancelarIngresso(int[][] sala){
+        Met.clearScreen();
         System.out.println("- - - Cancelando ingresso - - ->");
+
+        System.out.print("Digite a Fileira da Cadeira: ");
+        int fileira = Met.readInt();
+
+        System.out.print("Digite a Coluna da Cadeira: ");
+        int coluna = Met.readInt();
 
         if (!Met.validCondition(fileira, coluna)){
             return;
@@ -75,6 +92,7 @@ public class Opcao {
 
 
     public static void relatorio(int[][] sala){
+        Met.clearScreen();
         System.out.println("- - - Relatorio Fincanceiro - - ->");
         System.out.println();
         System.out.println("- - - - - - - PRECO INGRESSOS - - - - - - - -");
@@ -84,22 +102,6 @@ public class Opcao {
 
         Met.gerenciamentoFinal(sala);
 
-    }
-
-
-
-    public static void main(String[] args) {
-
-        int[][] sala = new int[5][10];
-
-        //sala.length = 5
-        //preenche a linha
-        for (int i = 0; i < sala.length; i++){
-            Arrays.fill(sala[i], 0);
-        }
-
-
-        mostrarSala(sala);
     }
 
 }

@@ -5,23 +5,14 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void clearScreen() {
-        try {
+    public static int[][] matrizSala(){
+        int[][] sala = new int[5][10];
 
-            String os = System.getProperty("os.name");
-
-            if (os.contains("Windows")) {
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-
-            } else {
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
-
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
+        for (int i = 0; i < sala.length; i++){
+            Arrays.fill(sala[i], 0);
         }
+
+        return sala;
     }
 
 
@@ -46,17 +37,19 @@ public class Main {
 
         switch (opcao) {
             case 1:
-                clearScreen();
                 Opcao.mostrarSala(sala);
                 break;
 
-            //case 2 -> Opcao.venderIngresso(sala);
+            case 2:
+                Opcao.venderIngresso(sala);
+                break;
 
-            //case 3 -> Opcao.cancelarIngresso(sala);
+            case 3:
+                Opcao.cancelarIngresso(sala);
+                break;
 
             case 4:
                 Opcao.relatorio(sala);
-                clearScreen();
                 break;
 
             case 5:
@@ -73,14 +66,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //inicializa a matriz com 0
-        int[][] sala = new int[5][10];
-
-        for (int i = 0; i < sala.length; i++){
-            Arrays.fill(sala[i], 0);
-        }
-
-        Scanner sc = new Scanner(System.in);
+        //inicializa a matriz
+        int[][] sala = matrizSala();
 
         int opcao = 0;
 
@@ -88,8 +75,7 @@ public class Main {
 
             //printa o menu
             printMenu();
-            opcao = sc.nextInt();
-            clearScreen();
+            opcao = Met.readInt();
 
             //logica das opcoes
             chooseMenu(opcao, sala);
