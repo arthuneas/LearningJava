@@ -1,7 +1,5 @@
 package GerenciadorCinema;
 
-import java.util.Arrays;
-
 public class Opcao {
 
     public static void mostrarSala(int[][] sala){
@@ -60,11 +58,10 @@ public class Opcao {
         if (sala[fileira][coluna] == 1) {
             System.out.println("Essa Cadeira Está Ocupada.");
             System.out.println("Selecione Uma Opção Disponivel!");
-            return;
 
         } else if (sala[fileira][coluna] == 0) {
 
-            System.out.printf("A Cadeira [%d][%d] Foi Selecionada!\n", fileira, coluna);
+            System.out.printf("A Cadeira [%d][%d] Foi Selecionada!\n\n", fileira, coluna);
             sala[fileira][coluna] = 1;
 
         }
@@ -74,7 +71,7 @@ public class Opcao {
 
     public static void cancelarIngresso(int[][] sala){
         Met.clearScreen();
-        System.out.println("- - - Cancelando ingresso - - ->");
+        System.out.println("\n- - - Cancelando ingresso - - ->");
 
         System.out.print("Digite a Fileira da Cadeira: ");
         int fileira = Met.readInt();
@@ -85,7 +82,9 @@ public class Opcao {
         if (!Met.validCondition(fileira, coluna)){
             return;
 
-        } else if (sala[fileira][coluna] == 1) {
+        }
+
+        if (sala[fileira][coluna] == 1) {
             sala[fileira][coluna] = 0;
             System.out.println("Ingresso Cancelado!");
             System.out.printf("A Cadeira [%d][%d] Foi Desocupada!\n",  fileira, coluna);
@@ -93,7 +92,6 @@ public class Opcao {
         } else if (sala[fileira][coluna] == 0) {
             System.out.printf("A Cadeira [%d][%d] Está Vazia!\n", fileira, coluna);
             System.out.println("Selecione Uma Cadeira Válida");
-            return;
 
         }
 
@@ -102,8 +100,6 @@ public class Opcao {
 
     public static void relatorio(int[][] sala){
         Met.clearScreen();
-        System.out.println("- - - Relatorio Fincanceiro - - ->");
-        System.out.println();
 
         Met.gerenciamentoFinal(sala);
 

@@ -17,7 +17,7 @@ public class Menu {
 
     public static void printMenu(){
 
-        System.out.println("=== MENU CINEMA ===");
+        System.out.println("\n=== MENU CINEMA ===");
         System.out.println("1. Mostrar Sala");
         System.out.println("2. Vender ingresso");
         System.out.println("3. Cancelar Ingresso");

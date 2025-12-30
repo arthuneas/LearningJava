@@ -3,13 +3,12 @@ package OrientaçaoObjeto;
 public class Caneta {
     public String modelo;
     public String cor;
-    public double ponta;
+    private double ponta;
     protected int carga;
     protected boolean tampada;
-    private int sim;
 
 
-    protected void status(){
+    public void status(){
         System.out.println("\nModelo: " + this.modelo);
         System.out.println("Cor: " + this.cor);
         System.out.println("Esta Tamapada? " + this.tampada);
@@ -18,15 +17,16 @@ public class Caneta {
     }
 
 
-    private void escrever(){
+    public void escrever(){
         System.out.println("\n");
         System.out.println("----------------------------");
         System.out.println("----------------------------");
         System.out.println();
+        rabiscar();
     }
 
-
-    public void rabiscar() {
+    //pode ser usado apenas denrtro da classe mae
+    private void rabiscar() {
 
         if (this.tampada == true) {
             System.out.printf("Erro, a %s esta tampada!", this.modelo);
@@ -41,7 +41,7 @@ public class Caneta {
         }
     }
 
-    public void tampar(){
+    protected void tampar(){
         this.tampada = true;
     }
 

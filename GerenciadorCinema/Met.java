@@ -1,5 +1,6 @@
 package GerenciadorCinema;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Met {
@@ -21,8 +22,7 @@ public class Met {
 
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException | InterruptedException e) {
         }
     }
 
@@ -31,8 +31,11 @@ public class Met {
 
         boolean posicaoValida = ((fileira >= 0) && (fileira < 5)) && ((coluna >= 0) && (coluna < 10));
 
+        Met.clearScreen();
+
         if (!posicaoValida) {
-            System.out.println("Digite Uma Posição Válida");
+            System.out.println("Posição Invalida.");
+            System.out.println("Digite Uma Posição Válida!\n");
             return false;
 
         }
@@ -65,6 +68,7 @@ public class Met {
         int precoTotal = precoVinte + precoQuarenta;
 
 
+        System.out.println("- - - - - Relatorio Gerencial e Financeiro - - - - - >\n");
         System.out.println("===================== Faturamento ======================");
         System.out.println("Faturamento dos Ingressos VIP: " + precoQuarenta);
         System.out.println("Faturamento dos Ingressos Tradicionais: " + precoVinte);

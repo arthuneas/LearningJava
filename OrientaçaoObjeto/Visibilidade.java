@@ -26,7 +26,6 @@ Caneta
 - pintar
 - destampar()
 
-
  */
 
 package OrientaçaoObjeto;
@@ -34,8 +33,6 @@ package OrientaçaoObjeto;
 public class Visibilidade {
     public static void main(String[] args) {
 
-        Caneta c1 = new Caneta();
-        c1.status();
 
     }
 }
