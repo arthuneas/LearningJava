@@ -1,6 +1,8 @@
 package OrientaçaoObjeto;
 
-public class Banco {
+public class ContaBanco {
+
+    //atributos
     public int numConta;
     protected String tipo;
     private String dono;
@@ -9,11 +11,16 @@ public class Banco {
     private float mensalidade;
 
 
-    public Banco(int numConta,  String tipo, String dono) {
-        abrirConta(tipo, dono);
+    //constructor
+    public ContaBanco(int numConta, String dono) {
+        setDono(dono);
+        setSaldo(0);
+        setStatus(false);
         setnumConta(numConta);
     }
 
+
+    //metodos especiais
     public int getNumConta() {
         return numConta;
     }
@@ -39,6 +46,7 @@ public class Banco {
     public void setDono(String dono){
         this.dono = dono;
     }
+
 
     public float getSaldo(){
         return saldo;
@@ -67,43 +75,64 @@ public class Banco {
     }
 
 
-    public void abrirConta(String tipo, String dono) {
-        setStatus(true);
+    //metodos personalizados
+    public void statusConta(){
 
-        if (tipo.equals("CC")) {
-            setSaldo(50);
-        } else if (tipo.equals("CP")) {
-            setSaldo(150);
+        System.out.println("----------------------------------");
+        System.out.println("Conta: " + getNumConta());
+        System.out.println("Tipo: " + getTipo());
+        System.out.println("Dono: " + getDono());
+        System.out.println("Saldo: " + getSaldo());
+        System.out.println("Status: " + isStatus());
+        System.out.println("----------------------------------");
+    }
+
+
+    public void abrirConta(String tipo) {
+
+        if (!isStatus()) {
+
+            setStatus(true);
+            setTipo(tipo);
+
+            if (tipo.equals("CC")) {
+                setSaldo(50);
+
+            } else if (tipo.equals("CP")) {
+                setSaldo(150);
+
+            }
+
+            String type = tipo.equals("CC") ? "Corrente" : "Poupança" ;
+
+            System.out.printf("\nParabens, %s!\n", getDono());
+            System.out.printf("Conta %s Aberta com sucesso!\n", type);
+
+        } else  {
+            System.out.println("Conta Já Existente!");
+
         }
 
-        setTipo(tipo);
-        setDono(dono);
-
     }
+
 
     public void fecharConta() {
 
         if (getSaldo() > 0) {
-            System.out.println("\nRetire o Saldo da Sua Conta!");
+            System.out.println("\nConta com Saldo!");
             System.out.println("Impossível Apagar Conta!");
             System.out.println("Saldo atual: " + getSaldo());
 
         } else if (getSaldo() < 0) {
-            System.out.println("\nVocê Está em Debito!");
+            System.out.println("\nConta em Debito!");
             System.out.println("Impossível Apagar Conta!");
             System.out.println("Saldo atual: " + getSaldo());
 
-        } else if (!isStatus()) {
-            System.out.println("\nConta Já Apagada!");
-            System.out.println("Impossível Apagar Conta!");
-
         } else {
+            System.out.printf("\nA Conta de %s Fechada!\n", getDono());
             setStatus(false);
-            setTipo(null);
-            setDono(null);
-            setnumConta(0);
-        }
 
+        }
     }
 
 
@@ -112,11 +141,11 @@ public class Banco {
         boolean blockStatus = !isStatus();
         boolean blockSaldo = getSaldo() < valor;
 
-        boolean bloqueio = blockSaldo || blockStatus;
+        boolean oblique = blockSaldo || blockStatus;
 
-        if (bloqueio) {
+        if (oblique) {
             if (blockStatus) {
-                System.out.println("\nConta Inexistente!");
+                System.out.println("\nConta Fechada!");
                 System.out.println("Impossível Sacar!");
 
             } else {
@@ -127,6 +156,7 @@ public class Banco {
 
         } else  {
             setSaldo(getSaldo() - valor);
+            System.out.println("Saque de [R$ %.2f] Realizado!");
 
         }
     }
@@ -134,13 +164,15 @@ public class Banco {
 
     public void depositar(float valor) {
         if (!isStatus()) {
-            System.out.println("\nConta Não Existente!");
+            System.out.println("\nConta Fechada!");
             System.out.println("Impossível Realizar Deposito!");
 
         } else {
             setSaldo(getSaldo() + valor);
+            System.out.printf("\nDeposito [R$ %.2f] Realizado!\n", getSaldo());
 
         }
+
     }
 
 
@@ -152,11 +184,12 @@ public class Banco {
                 setMensalidade(12);
 
             } else if (getTipo().equals("CP")) {
-                setMensalidade(10);
+                setMensalidade(20);
 
             }
+
             setSaldo(getSaldo() - getMensalidade());
-            System.out.printf("\nMensalidade [R$ %.2f]Paga com Sucesso!\n",  getMensalidade());
+            System.out.printf("\nMensalidade [R$ %.2f] Paga com Sucesso!\n",  getMensalidade());
 
         } else {
             System.out.println("\nConta Inexistente!");
