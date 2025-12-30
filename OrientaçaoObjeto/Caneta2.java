@@ -5,7 +5,7 @@ public class Caneta2 {
     //diretamente, apenas os gets e setters
 
     //encapsulmos as variaveis
-    private  String modelo;
+    private String modelo;
     private float ponta;
     private boolean tampada;
     private String cor;
@@ -21,16 +21,16 @@ public class Caneta2 {
 
 
     public String getModelo() {
-        return this.modelo;
+        return modelo;
     }
 
-    public void setModelo(String model) {
-        this.modelo = model;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 
 
     public float getPonta(){
-        return this.ponta;
+        return ponta;
     }
 
     public void setPonta(float Ponta) {
@@ -39,7 +39,7 @@ public class Caneta2 {
 
 
     public String getCor(){
-        return this.cor;
+        return cor;
     }
 
     public void setCor(String cor) {
@@ -55,6 +55,14 @@ public class Caneta2 {
         setTampada(false);
     }
 
+    public void status(){
+        System.out.println();
+        System.out.println("Modelo: " + getModelo());
+        System.out.println("Ponta: " + getPonta());
+        System.out.println("Cor: " + getCor());
+        System.out.println("Tampada? " + isTampada());
+    }
+
 
     public Caneta2(String modelo, String cor, float ponta){
 
@@ -68,6 +76,8 @@ public class Caneta2 {
 
     public Caneta2(){
         //outra forma de criar constructor igual na classe normal
+        //cria valores padrão para uma classe sem parametros
+        this("Caneta Genérica", "Preta", 0.5f);
     }
 
 }

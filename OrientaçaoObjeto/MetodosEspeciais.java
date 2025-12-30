@@ -36,8 +36,10 @@ public class MetodosEspeciais {
 
       c2.destampar();
 
-      System.out.println(c2.isTampada());
-      System.out.println(c2.getPonta());
+      c2.status();
+      c2.tampar();
+      c2.setModelo("Bic Cristal");
+      c2.status();
 
    }
 
