@@ -28,7 +28,7 @@ Caneta
 
  */
 
-package OrientaçaoObjeto;
+package OrientaçaoObjeto.IntroOrientacaoObjeto;
 
 public class Visibilidade {
     public static void main(String[] args) {

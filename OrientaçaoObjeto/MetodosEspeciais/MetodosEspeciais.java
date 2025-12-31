@@ -17,7 +17,7 @@ Metodo Construtor: Constructor
 
  */
 
-package OrientaçaoObjeto;
+package OrientaçaoObjeto.MetodosEspeciais;
 
 public class MetodosEspeciais {
 
@@ -34,10 +34,10 @@ public class MetodosEspeciais {
       System.out.println(c1.getPonta());
       System.out.println(c2.isTampada());
 
-      c2.destampar();
+      //c2.destampar();
 
       c2.status();
-      c2.tampar();
+      //c2.tampar();
       c2.setModelo("Bic Cristal");
       c2.status();
 

@@ -1,4 +1,4 @@
-package OrientaçaoObjeto;
+package OrientaçaoObjeto.MetodosEspeciais;
 
 public class Caneta2 {
     //deixe as variaveis como private para ninguem usa-las

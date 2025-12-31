@@ -88,8 +88,7 @@ Objeto:
 */
 
 
-
-package OrientaçaoObjeto;
+package OrientaçaoObjeto.IntroOrientacaoObjeto;
 
 public class Objeto {
     public static void main(String[] args) {

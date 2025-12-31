@@ -1,4 +1,4 @@
-package OrientaçaoObjeto;
+package OrientaçaoObjeto.IntroOrientacaoObjeto;
 
 public class Caneta {
     public String modelo;

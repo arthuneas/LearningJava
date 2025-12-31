@@ -1,4 +1,4 @@
-package OrientaçaoObjeto;
+package OrientaçaoObjeto.MetodosEspeciais;
 
 public class CanetaAutomatica {
 
