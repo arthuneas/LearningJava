@@ -1,6 +1,6 @@
 package Exercicios.Dispositivo;
 
-public class ControleRemoto {
+public class Main {
 
     public static void main (String[] args){
 
@@ -10,6 +10,7 @@ public class ControleRemoto {
         //teste de aumentar tv desligada
         televisao.ligar();
         televisao.aumentarVolume();
+        televisao.desligar();
 
 
 
