@@ -1,3 +1,5 @@
+package JavaBasico;
+
 import java.util.Arrays;
 
 public class Vetores {

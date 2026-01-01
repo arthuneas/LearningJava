@@ -45,7 +45,7 @@ Ponta - 0.5
 Carga - 90
 Tampada - falso
 
---Metodos--
+--JavaBasico.Metodos--
 escrever();
 rabiscar();
 pintar();

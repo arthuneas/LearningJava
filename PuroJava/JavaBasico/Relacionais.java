@@ -1,4 +1,4 @@
-//operador ternario:
+package JavaBasico;//operador ternario:
 /*
 if (n1 > n2) {
     great = n1;

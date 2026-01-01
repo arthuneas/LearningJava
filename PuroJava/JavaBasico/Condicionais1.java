@@ -1,3 +1,5 @@
+package JavaBasico;
+
 import java.util.Scanner;
 
 public class Condicionais1 {

@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package JavaBasico;
 
 public class Operacoes {
 

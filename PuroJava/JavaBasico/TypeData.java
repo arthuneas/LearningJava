@@ -1,4 +1,4 @@
-/*
+package JavaBasico;/*
  Tipo de Dados no Java
      LOGICO:
          boolean - Boolean - 1 bit - "true"

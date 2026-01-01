@@ -7,7 +7,7 @@ para a pessoa - consulta.
 - fornece acesso a um atributo sem fornece-lo diretamente
 
 
-Metodos Modificadores: Setters
+JavaBasico.Metodos Modificadores: Setters
 uma pessoa quer adicionar livros a uma estante,
 o metodo set é como se houvesse uma pessoa que depositasse os
 livros corretamente, necessita de parametros.

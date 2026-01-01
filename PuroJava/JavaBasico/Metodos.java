@@ -1,5 +1,6 @@
+package JavaBasico;
+
 import java.util.Scanner;
-import java.util.SortedMap;
 
 public class Metodos {
 
@@ -30,14 +31,14 @@ public class Metodos {
 
         sc.close();
 
-        //instanciei um novo objeto da classe Operacoes, static
+        //instanciei um novo objeto da classe JavaBasico.Operacoes, static
         Operacoes cont = new Operacoes();
         String line = cont.contador(inicio, fim);
 
         //metodo sem static
         System.out.println(line);
 
-        //os metodos estao em um arquivo Operacoes -> classe
+        //os metodos estao em um arquivo JavaBasico.Operacoes -> classe
         //public static
         System.out.println(Operacoes.subtracao(inicio, fim));
 
