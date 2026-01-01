@@ -92,28 +92,54 @@ public class Livro implements Publicacao {
 
     @Override
     public void folhear(int pagAtual) {
-        setAberto(true);
-        setPagAtual(pagAtual);
+        if ((pagAtual > totPaginas) || (pagAtual < 0)){
+            System.out.println("NUMERO DE PAGINA INEXISTENTE");
+
+        } else {
+            setAberto(true);
+            setPagAtual(pagAtual);
+
+        }
+
     }
 
     @Override
     public void avancarPag() {
-        if (getPagAtual() < getTotPaginas()) {
-            setPagAtual(getPagAtual() + 1);
+        if (isAberto()) {
+
+            if (getPagAtual() < getTotPaginas()) {
+                setPagAtual(getPagAtual() + 1);
+
+            } else {
+                System.out.println("Chegou Na Pagina Final");
+                System.out.println("Impossível Avançar Página!");
+
+            }
 
         } else {
-            System.out.println("Chegou Na Pagina Final");
+            System.out.println("Livro Fechado.");
+            System.out.println("Impossível Avançar Página!");
 
         }
+
     }
 
     @Override
     public void voltarPag() {
-        if (getPagAtual() > 0) {
-            setPagAtual(getPagAtual() - 1);
+        if (isAberto()) {
+
+            if (getPagAtual() > 0) {
+                setPagAtual(getPagAtual() - 1);
+
+            } else {
+                System.out.println("Chegou na Pagina 0");
+                System.out.println("Impossível Voltar Página!");
+
+            }
 
         } else {
-            System.out.println("Chegou na Pagina 0");
+            System.out.println("Livro Fechado.");
+            System.out.println("Impossível Voltar Página!");
 
         }
     }

@@ -23,6 +23,7 @@ public class Main {
         l[1].voltarPag();
         System.out.println(l[1].detalhes());
         System.out.println(l[2].detalhes());
+        l[1].folhear(-1);
 
     }
 }
