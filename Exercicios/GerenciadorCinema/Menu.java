@@ -1,4 +1,4 @@
-package GerenciadorCinema;
+package Exercicios.GerenciadorCinema;
 
 import java.util.Arrays;
 

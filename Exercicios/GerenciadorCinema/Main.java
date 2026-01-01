@@ -1,4 +1,4 @@
-package GerenciadorCinema;
+package Exercicios.GerenciadorCinema;
 
 public class Main {
 

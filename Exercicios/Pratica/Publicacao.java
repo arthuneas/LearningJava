@@ -1,4 +1,4 @@
-package OrientaçaoObjeto.Pratica;
+package Exercicios.Pratica;
 
 public interface Publicacao {
 

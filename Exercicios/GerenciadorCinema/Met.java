@@ -1,4 +1,4 @@
-package GerenciadorCinema;
+package Exercicios.GerenciadorCinema;
 
 import java.io.IOException;
 import java.util.Scanner;
