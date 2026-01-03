@@ -1,4 +1,4 @@
-package OrientaçaoObjeto.Heranca;
+package OrientaçaoObjeto.Heranca.Introducao;
 
 //aluno é uma pessoa, faremos uma relacao entre a classe Pessoa (mae)
 //e a classe Aluno (filho) que herderá as caracteristicas de Pessoa.

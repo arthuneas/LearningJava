@@ -1,4 +1,4 @@
-package OrientaçaoObjeto.Heranca;
+package OrientaçaoObjeto.Heranca.Introducao;
 
 public class Main {
     public static void main(String[] args){
@@ -23,7 +23,6 @@ public class Main {
         p4.mudarTrabalho("Estágiaria em Ciências Políticas");
         p4.setTrabalhando(false);
         p4.mudarTrabalho("Estágiaria em Ciências Sociais");
-
 
     }
 }

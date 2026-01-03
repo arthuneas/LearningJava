@@ -1,6 +1,6 @@
-package OrientaçaoObjeto.Heranca;
+package OrientaçaoObjeto.Heranca.Introducao;
 
-public class Colaborador extends Pessoa{
+public class Colaborador extends Pessoa {
 
     private String setor;
     private boolean trabalhando;

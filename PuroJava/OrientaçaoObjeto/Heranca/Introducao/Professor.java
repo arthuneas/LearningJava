@@ -1,4 +1,4 @@
-package OrientaçaoObjeto.Heranca;
+package OrientaçaoObjeto.Heranca.Introducao;
 
 public class Professor extends Pessoa{
 

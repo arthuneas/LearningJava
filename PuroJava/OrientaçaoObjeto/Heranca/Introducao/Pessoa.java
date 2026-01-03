@@ -30,7 +30,7 @@ mae é a superclasse
 filha é a subclasse
  */
 
-package OrientaçaoObjeto.Heranca;
+package OrientaçaoObjeto.Heranca.Introducao;
 
 public class Pessoa {
 
