@@ -1,3 +1,4 @@
+
 /*
 
 SuperClasse A
@@ -55,13 +56,14 @@ public abstract class Pessoa {
     private String Sexo;
     private int idade;
 
-    public Pessoa(String nome, int idade, String sexo) {
-
-    }
 
     //quando usa o final, o metodo não pode ser sobrescrito.
+    //não pode haver variaçoes de logica entre as classes
     public final void fazerAniv(){
-        idade += 1;
+        System.out.printf("Idade Antes do Aniversário de %s: %d\n", getNome(), getIdade());
+        setIdade(getIdade() + 1);
+        System.out.printf("Idade Antes do Aniversário de %s: %d\n", getNome(), getIdade());
+        System.out.println();
     }
 
 
@@ -87,5 +89,14 @@ public abstract class Pessoa {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+
+    public String status() {
+        return "Pessoa{" +
+                "nome='" + nome + '\'' +
+                ", Sexo='" + Sexo + '\'' +
+                ", idade=" + idade +
+                '}';
     }
 }

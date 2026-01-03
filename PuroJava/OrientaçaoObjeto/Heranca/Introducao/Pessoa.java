@@ -32,7 +32,7 @@ filha é a subclasse
 
 package OrientaçaoObjeto.Heranca.Introducao;
 
-public class Pessoa {
+public abstract class Pessoa {
 
     private String nome;
     private int idade;

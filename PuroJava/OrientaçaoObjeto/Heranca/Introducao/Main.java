@@ -3,13 +3,13 @@ package OrientaçaoObjeto.Heranca.Introducao;
 public class Main {
     public static void main(String[] args){
 
-        Pessoa p1 = new Pessoa("Pedro", 21, "M");
+        //Pessoa p1 = new Pessoa("Pedro", 21, "M");
         Aluno p2 = new Aluno("Arthur", 19, "M", 242118880, "Ciência da Computação");
         Professor p3 = new Professor("Claudio", 32, "M", "Informática", 18553.50f);
         Colaborador p4 = new Colaborador("Fabiana", 23, "F", "Restaurante Universitário");
 
         //na SuperClasse, há o metodo status, todo o restante herda status
-        System.out.println(p1.status());
+        //System.out.println(p1.status());
         System.out.println(p2.status());
         System.out.println(p3.status());
         System.out.println(p4.status());
