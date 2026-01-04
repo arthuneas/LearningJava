@@ -10,11 +10,10 @@ Assinatura do Método: Quantidade e os tipos dos Parametros
 assinatura é igual.
 
 Tipos de Polimorfismo:
-P. Sobreposição: acontece quando substituimos um metodo de uma superclasse na sua
+- P. Sobreposição: acontece quando substituimos um metodo de uma superclasse na sua
 subclassse, usando a mesma assinatura.
 
-
-P. Sobrecarga
+- P. Sobrecarga
 
  */
 
