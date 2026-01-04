@@ -6,6 +6,13 @@ public class Professor extends Pessoa {
     private float salario;
 
 
+    public Professor(String nome, int idade, String sexo, String especialidade, float salario){
+        super(nome, idade, sexo);
+        this.especialidade = especialidade;
+        this.salario = salario;
+    }
+
+
     public String getEspecialidade() {
         return especialidade;
     }

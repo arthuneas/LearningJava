@@ -4,6 +4,10 @@ public class Bolsista extends Aluno{
 
     private float bolsa;
 
+    public Bolsista(String nome, int idade, String sexo, int matricula, String curso, float mensalidade, float bolsa){
+        super(nome, idade, sexo, matricula, curso, mensalidade);
+        this.bolsa = bolsa;
+    }
 
     public float getBolsa() {
         return bolsa;

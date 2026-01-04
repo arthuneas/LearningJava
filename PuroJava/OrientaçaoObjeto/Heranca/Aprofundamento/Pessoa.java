@@ -53,9 +53,15 @@ package OrientaçaoObjeto.Heranca.Aprofundamento;
 public abstract class Pessoa {
 
     private String nome;
-    private String Sexo;
+    private String sexo;
     private int idade;
 
+
+    public Pessoa(String nome, int idade, String sexo) {
+        this.nome = nome;
+        this.sexo = sexo;
+        this.idade = idade;
+    }
 
     //quando usa o final, o metodo não pode ser sobrescrito.
     //não pode haver variaçoes de logica entre as classes
@@ -76,11 +82,11 @@ public abstract class Pessoa {
     }
 
     public String getSexo() {
-        return Sexo;
+        return sexo;
     }
 
     public void setSexo(String sexo) {
-        Sexo = sexo;
+        this.sexo = sexo;
     }
 
     public int getIdade() {
@@ -95,7 +101,7 @@ public abstract class Pessoa {
     public String status() {
         return "Pessoa{" +
                 "nome='" + nome + '\'' +
-                ", Sexo='" + Sexo + '\'' +
+                ", Sexo='" + sexo + '\'' +
                 ", idade=" + idade +
                 '}';
     }

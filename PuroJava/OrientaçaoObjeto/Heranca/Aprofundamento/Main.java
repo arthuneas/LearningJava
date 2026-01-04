@@ -4,44 +4,41 @@ public class Main {
 
     public static void main(String[] args){
 
-        Visitante v1 = new Visitante();
+        //objeto impossivel enquanto for abstrato
+        //classe raiz
+        //Pessoa p1 = new Pessoa("arthur", 23, "M")
+
+
         //usou dados da Classe funcionando.
         //herança pobre
-        v1.setNome("Julio");
-        v1.setIdade(21);
-        v1.setSexo("M");
+        Visitante v1 = new Visitante("Julio", 21, "M");
         System.out.println(v1.status() + "\n");
 
-        Aluno a1 = new Aluno();
+        Aluno a1 = new Aluno("Arthur", 19, "M", 1234, "Ciência da Computação", 3320f);
+        /*
         a1.setNome("Arthur");
         a1.setIdade(19);
         a1.setSexo("M");
         a1.setCurso("Ciência da Computação");
         a1.setMensalidade(3320);
         a1.pagarMensalidade();
+         */
         System.out.println(a1.status() + "\n");
 
-        Bolsista b1 = new Bolsista();
-        b1.setNome("Caio");
-        b1.setIdade(20);
-        b1.setSexo("M");
-        b1.setCurso("Nutrição");
-        b1.setMensalidade(2340);
-        b1.setBolsa(30);
+
+        Bolsista b1 = new Bolsista("Caio", 20, "M", 3245, "Nutrição", 2340.65f,30);
         //é o mesmo metodo que a1, mas ele tem logica diferente para bolsista
         b1.pagarMensalidade();
         System.out.println(b1.status() + "\n");
 
-        Professor p1 = new Professor();
-        p1.setNome("Otávio");
-        p1.setSalario(17930.93f);
-        p1.setEspecialidade("Redes de Computadores");
+        Professor p1 = new Professor("Otávio", 32, "M", "Redes de Computadores", 17906.54f);
         p1.receberAumento(345.43f);
+        System.out.println(p1.status() + "\n");
 
-        Tecnico t1 = new Tecnico();
-        t1.setNome("Giovana");
-        t1.setRegistroProfissional("Técnico em Eletrônica");
+
+        Tecnico t1 = new Tecnico("Giovana", 23, "F", 4324, 1870.50f, "Técnico em Eletrônica");
         t1.praticar();
+        System.out.println(t1.status() + "\n");
 
         //exemplo de polimorfismo
         v1.fazerAniv();

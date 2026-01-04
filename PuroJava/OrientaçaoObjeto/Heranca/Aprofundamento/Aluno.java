@@ -7,6 +7,14 @@ public class Aluno extends Pessoa {
     private float mensalidade;
 
 
+    public Aluno(String nome, int idade, String sexo, int matricula, String curso, float mensalidade) {
+        super(nome, idade, sexo);
+        this.matricula = matricula;
+        this.curso = curso;
+        this.mensalidade = mensalidade;
+    }
+
+
     public int getMatricula() {
         return matricula;
     }
