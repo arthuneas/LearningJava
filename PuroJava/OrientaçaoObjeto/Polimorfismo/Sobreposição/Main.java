@@ -73,6 +73,9 @@ public class Main {
         ar.brincar();
         System.out.println();
 
+        Lobo l = new Lobo(5.4f, 14, 4, "Cinza, Branco e Preto");
+        l.emitirSom();
+
     }
 
 }
