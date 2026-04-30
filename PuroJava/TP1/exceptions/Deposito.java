@@ -3,13 +3,13 @@ package TP1.exceptions;
 import java.util.Scanner;
 
 class DepositoInvalidoExcpetion extends RuntimeException{
-    public DepositoInvalidoExcpetionm (String mensagem){
+    public DepositoInvalidoExcpetion (String mensagem){
 
     }
 }
 
 //Classe Conta
-class Conta extends DepositoInvalidoExcpetion{
+class Conta {
 
     private int agencia;
     private int numero;
