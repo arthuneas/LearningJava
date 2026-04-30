@@ -1,4 +1,4 @@
-package TP1;
+package TP1.Intro;
 
 import java.util.ArrayList;
 import java.util.List;

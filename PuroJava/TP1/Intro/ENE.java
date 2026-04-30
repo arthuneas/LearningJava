@@ -1,4 +1,4 @@
-package TP1;
+package TP1.Intro;
 
 import java.util.Locale;
 import java.util.Scanner;
