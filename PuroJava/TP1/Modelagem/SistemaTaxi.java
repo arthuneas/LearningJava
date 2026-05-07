@@ -3,8 +3,6 @@ package TP1.Modelagem;
 import java.util.ArrayList;
 import java.util.List;
 
-import static TP1.Modelagem.TipoChamado.CORRIDA;
-
 class Cliente {
 
     private String cpf;
@@ -127,6 +125,9 @@ class Chamado {
 
     //todos as variáveis na classe
     public Chamado(TipoChamado tipo, String data, String origem, String destino, String horaPartida, String horaChegada, double kmInicial, double kmFinal, Veiculo veiculo, Motorista motorista, Cliente cliente) {
+        this.codigoChamado = contadorChamados;
+        contadorChamados++;
+
         this.tipo = tipo;
         this.data = data;
         this.origem = origem;
@@ -138,22 +139,28 @@ class Chamado {
         this.veiculo = veiculo;
         this.motorista = motorista;
         this.cliente = cliente;
+        this.valorTotal = calcularValorTotal();
     }
 
 
     //corrida não finalizada
-    public Chamado(TipoChamado tipo, String data, String origem, String destino, String horaPartida, double kmInicial, Veiculo veiculo, Motorista motorista) {
+    public Chamado(TipoChamado tipo, String data, String origem, String destino, String horaPartida, double kmInicial, Veiculo veiculo, Motorista motorista, Cliente cliente) {
+        this.codigoChamado = contadorChamados;
+        contadorChamados++;
+
         this.tipo = tipo;
         this.data = data;
         this.origem = origem;
         this.destino = destino;
         this.horaPartida = horaPartida;
-        this.horaChegada = null;
+        this.horaChegada = " ";
         this.kmInicial = kmInicial;
         this.kmFinal = 0;
         this.valorTotal = calcularValorTotal();
         this.veiculo = veiculo;
         this.motorista = motorista;
+        this.cliente = cliente;
+        this.valorTotal = 0.0;
     }
 
     public Veiculo getVeiculo() {
@@ -183,10 +190,11 @@ class Chamado {
     public void finalizarChamado(String horarioChegada, double kmFinal){
         this.horaChegada = horarioChegada;
         this.kmFinal = kmFinal;
+        this.valorTotal = calcularValorTotal();
     }
 
     private boolean isFinalizado(){
-        if (kmFinal == 0 || horaChegada == null){
+        if (kmFinal == 0 || horaChegada.equals(" ")){
             return false;
         } else {
             return true;
@@ -194,11 +202,11 @@ class Chamado {
     }
 
     private double calcularDistancia(){
-        return kmFinal - kmInicial;
+        return this.kmFinal - this.kmInicial;
     }
 
     private double calcularValorTotal(){
-        if (tipo == CORRIDA) {
+        if (tipo == TipoChamado.CORRIDA) {
             return calcularDistancia() * 3.59;
         } else {
             return calcularDistancia() * 6.51;
@@ -211,11 +219,18 @@ class Chamado {
         System.out.println("Tipo: " + tipo);
         System.out.println("Cliente: " + cliente.getNome() + " (CPF: " + cliente.getCpf() + ")");
         System.out.println("Motorista: " + motorista.getNome() + " (CNH: " + motorista.getCnh() + ")");
-        System.out.println("Veículo: " + veiculo + " (Placa: " + veiculo.getPlaca() + ")");
+        System.out.println("Veículo: " + veiculo.getModelo() + " (Placa: " + veiculo.getPlaca() + ")");
         System.out.println("Origem: " + origem);
         System.out.println("Destino: " + destino);
         System.out.println("Partida: " + horaPartida);
-        System.out.println("Chegada: " + (isFinalizado() ? horaChegada : "Aguardando finalização..."));
+        if (isFinalizado()){
+            System.out.println("Chegada: " + horaChegada);
+            System.out.printf("Distância: %.1f\n km", calcularDistancia());
+            System.out.printf("Valor total: R$ %.2f\n", this.valorTotal);
+
+        } else {
+            System.out.println("Chegada: Aguardando finalização...");
+        }
     }
 
 }
@@ -249,11 +264,11 @@ public class SistemaTaxi {
         List<Chamado> chamados = new ArrayList<>();
 
         //Corrida - finalizada
-        Chamado chamado1 = new Chamado(CORRIDA, "01/05/2025", "Setor Comercial Sul", "Asa Norte", "14:00", "14:30", 1234, 1241, veiculo3, motorista3, cliente3);
+        Chamado chamado1 = new Chamado(TipoChamado.CORRIDA, "01/05/2025", "Setor Comercial Sul", "Asa Norte", "14:00", "14:30", 1234, 1241, veiculo3, motorista3, cliente3);
         chamados.add(chamado1);
 
         //Corrida - não finalizada
-        Chamado chamado2 = new Chamado(CORRIDA, "01/05/2025", "Asa Norte", "Praça dos Três Poderes", "15:00", "15:20", 1242, 1251, veiculo3, motorista3, cliente1);
+        Chamado chamado2 = new Chamado(TipoChamado.CORRIDA, "01/05/2025", "Asa Norte", "Praça dos Três Poderes", "15:00", "15:20", 1242, 1251, veiculo3, motorista3, cliente1);
         chamados.add(chamado2);
 
         //Viagem - finalizada
@@ -261,11 +276,11 @@ public class SistemaTaxi {
         chamados.add(chamado3);
 
         //Corrida - não finalizada
-        Chamado chamado4 = new Chamado(CORRIDA, "05/05/2025", "Taguatinga", "Shopping Conjunto Nacional", "13:00", 3050, veiculo1, motorista1, cliente2);
+        Chamado chamado4 = new Chamado(TipoChamado.CORRIDA, "05/05/2025", "Taguatinga", "Shopping Conjunto Nacional", "13:00", 3050, veiculo1, motorista1, cliente2);
         chamados.add(chamado4);
 
         //Corrida - não finalizada
-        Chamado chamado5 = new Chamado(CORRIDA, "05/05/2025", "Estádio Mané Garrincha", "Shopping ParkShopping", "12:00", 1000, veiculo2, motorista1, cliente1);
+        Chamado chamado5 = new Chamado(TipoChamado.CORRIDA, "05/05/2025", "Estádio Mané Garrincha", "Shopping ParkShopping", "12:00", 1000, veiculo2, motorista1, cliente1);
         chamados.add(chamado5);
 
         //Alteração do chamado5
