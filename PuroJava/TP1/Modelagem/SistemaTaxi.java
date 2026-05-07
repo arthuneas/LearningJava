@@ -1,9 +1,9 @@
-package TP1;
+package TP1.Modelagem;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static TP1.TipoChamado.CORRIDA;
+import static TP1.Modelagem.TipoChamado.CORRIDA;
 
 class Cliente {
 
@@ -156,7 +156,6 @@ class Chamado {
         this.motorista = motorista;
     }
 
-
     public Veiculo getVeiculo() {
         return veiculo;
     }
@@ -206,8 +205,17 @@ class Chamado {
         }
     }
 
-    public void mostrarChamado{
-
+    public void mostrarChamado(){
+        System.out.println("Chamado: " + codigoChamado);
+        System.out.println("Data: " + data);
+        System.out.println("Tipo: " + tipo);
+        System.out.println("Cliente: " + cliente.getNome() + " (CPF: " + cliente.getCpf() + ")");
+        System.out.println("Motorista: " + motorista.getNome() + " (CNH: " + motorista.getCnh() + ")");
+        System.out.println("Veículo: " + veiculo + " (Placa: " + veiculo.getPlaca() + ")");
+        System.out.println("Origem: " + origem);
+        System.out.println("Destino: " + destino);
+        System.out.println("Partida: " + horaPartida);
+        System.out.println("Chegada: " + (isFinalizado() ? horaChegada : "Aguardando finalização..."));
     }
 
 }
