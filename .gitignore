@@ -3,6 +3,8 @@
 *.ipr
 *.iws
 
+*.gitignore
+
 *out/
 *.DS_Store
 
