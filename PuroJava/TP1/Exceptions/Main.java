@@ -1,4 +1,4 @@
-package TP1.exceptions;
+package TP1.Exceptions;
 
 import java.util.Scanner;
 
