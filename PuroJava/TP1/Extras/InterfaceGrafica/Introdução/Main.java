@@ -1,4 +1,4 @@
-package TP1.Extras.InterfaceGrafica.Telas;
+package TP1.Extras.InterfaceGrafica.Introdução;
 
 public class Main {
 
