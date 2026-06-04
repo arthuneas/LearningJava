@@ -48,12 +48,16 @@ class Produto implements Classificavel {
         this.preco = preco;
     }
 
-
     @Override
     public boolean menorElemento(Classificavel obj) {
         Produto compara = (Produto) obj;
 
         return this.codigo < compara.codigo;
+    }
+
+    @Override
+    public String toString() {
+        return codigo + " " + nome + " " + preco;
     }
 }
 
@@ -74,7 +78,12 @@ class Cliente implements Classificavel {
     public boolean menorElemento(Classificavel obj) {
         Cliente compara = (Cliente) obj;
 
-        return this.cpf < compara.cpf;
+        return this.nome.compareTo(compara.nome) < 0;
+    }
+
+    @Override
+    public String toString() {
+        return cpf + " " + nome + " " + endereco;
     }
 }
 
@@ -91,9 +100,14 @@ class Servico implements Classificavel {
 
     @Override
     public boolean menorElemento(Classificavel obj) {
-        Produto compara = (Servico) obj;
+        Servico compara = (Servico) obj;
 
-        return this.codigo < compara.codigo;
+        return this.preco < compara.preco;
+    }
+
+    @Override
+    public String toString() {
+        return data + " " + preco + " " + tipoServico;
     }
 }
 
